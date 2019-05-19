@@ -10,6 +10,8 @@ __author__ = 'XXX'
 class Assignment2:
     
     def __init__(self, main_in_vcf, second_in_vcf):
+        self.check_pyvcf_version()
+
         self.main_name = main_in_vcf
         self.main_reader = vcf.Reader(open(main_in_vcf, "r"))
         self.main_vcf = list(self.main_reader)
@@ -145,14 +147,13 @@ class Assignment2:
         
     
     def print_summary(self):
-        self.check_pyvcf_version()  # done
-        self.get_average_quality_of_file(self.main_vcf)  # done
-        self.get_total_number_of_variants_of_file(self.main_vcf[0:5])  # done
+        self.get_average_quality_of_file(self.main_vcf)
+        self.get_total_number_of_variants_of_file(self.main_vcf)
         self.get_variant_caller_of_vcf(self.main_vcf)
         self.get_human_reference_version(self.main_vcf)
-        self.get_number_of_indels(self.main_vcf)  #done
-        self.get_number_of_snvs(self.main_vcf)  # done
-        self.get_number_of_heterozygous_variants(self.main_vcf)  # done
+        self.get_number_of_indels(self.main_vcf)
+        self.get_number_of_snvs(self.main_vcf)
+        self.get_number_of_heterozygous_variants(self.main_vcf)  
         self.merge_chrs_into_one_vcf(self.main_name, self.second_name)
     
     
