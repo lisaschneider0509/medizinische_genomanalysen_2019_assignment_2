@@ -4,7 +4,7 @@ import vcf
 import importlib
 import numpy as np
 
-__author__ = 'XXX'
+__author__ = 'Lisa Schneider'
 
 
 class Assignment2:
